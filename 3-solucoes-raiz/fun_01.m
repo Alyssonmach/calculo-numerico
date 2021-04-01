@@ -1,0 +1,1 @@
+function y = fun_01(x)  y = cos(2 * x - 5) + 0.57;  endfunction
