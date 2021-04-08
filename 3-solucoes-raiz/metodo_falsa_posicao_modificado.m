@@ -1,51 +1,55 @@
-% Mensagens de identificacao
-disp('Programa para calcular uma raiz de uma equacao nao linear');
-disp(' Metodo da Falsa Posicao Modificada');
-
-% Leitura dos dados
-tol = input('Digite a tolerancia : ');
-a = input('Digite o limite inferior do intervalo a: ');
-b = input('Digite o limite superior do intervalo b: ');
-
+% Dados de entrada
+disp ('Este programa encontra uma raiz de uma equacao nao linear');
+disp(' usando o Metodo da Falsa Posicao Modificado');
+tol = input('Digite a tolerancia:   ');
+a = input('Digite o limite inferior do intervalo a:   ');
+b = input('Digite o limite superior do intervalo b:   ');
+% Numero maximo de iteracoes permitido
+nummax = 400;
 % Atribuicoes Iniciais
 x0 = a;
-k = 0;
-nummax = 400;
-
-z = @fun_01
+k = 1;
+F = fun_01(a);
+G = fun_01(b);
 
 % Calculo da primeira aproximacao
-fa = z(a);
-fb = z(b);
-x1 = (a*abs(fb) + b*abs(fa))/(abs(fa)+abs(fb));
+
+x1 = (a * G - b * F) /(G - F);
+
 
 % Calculo das aproximacoes
-while abs(z(x1)) > tol || abs((x1-x0) / x1) > tol || k >= nummax
 
- if (z(a)*z(x1) < 0)
-   a = a;
-   b = x1;
- if(z(x0)*z(x1)>0)
-  fa = z(a)/2;
- else
-  fa = z(a);
- end
-  fb = z(b);
- else
-   a = x1;
-   b = b;
- if(z(x0)*z(x1)>0)
-  fb = z(b)/2;
- else
-  fb = z(b);
- end
-  fa = z(a);
- end
-   k = k + 1;
-   x0 = x1;
-   x1 = (a*abs(fb) + b*abs(fa))/(abs(fa)+abs(fb));
-
+while abs(fun_01(x1)) > tol || abs((x1-x0) /x1) > tol || k >= nummax
+   
+     
+   if (fun_01(a)*fun_01(x1) < 0)
+        a = a;
+        b = x1;
+        G = fun_01(x1);
+                    
+        if ( fun_01(x0)*fun_01(x1) > 0.0)
+            F = (fun_01(a))/2;
+        end
+   else
+        a = x1;
+        b = b;
+        F = fun_01(x1);
+        if ( fun_01(x0)*fun_01(x1) > 0.0)
+            G = fun_01(b)/2;
+        end
+   end        
+       k = k + 1;
+       x0 = x1;
+        
+       x1 = (a * G - b * F) /(G - F);       
 end
 fprintf('Raiz encontrada com tol= %f\n',tol)
-fprintf ( 'raiz = %f\n', x1 )
+fprintf('raiz = %f\n',x1)
 fprintf('Numero de iteracoes = %i\n', k)
+
+
+   
+   
+   
+       
+   
