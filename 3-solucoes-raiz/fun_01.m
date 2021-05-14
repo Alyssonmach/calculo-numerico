@@ -1,1 +1,1 @@
-function y = fun_01(x)  y = 3*x^7 - 12*x^5 - 4*x^4 - 12*x^3 - 3*x^2 - 12*x - 23;  endfunction;
+function y = fun_01(x)  y = 3*x^3 - 21*x + 7;  endfunction;
