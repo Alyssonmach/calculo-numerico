@@ -56,7 +56,3 @@ octave func_plot.m
 ### Exercícios
 
 ![Gráfico do exercício 2](exercicios/exercicio2.png)
-
-## Contribuições
-
-Sugestões, correções e novos exemplos são bem-vindos. Abra uma *issue* para discutir uma ideia ou envie um *pull request* com a descrição do método, os arquivos necessários e instruções para executá-lo.
