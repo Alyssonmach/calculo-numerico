@@ -1,0 +1,14 @@
+# Arquivos temporários do macOS
+.DS_Store
+
+# Estado e arquivos de recuperação do Octave
+.octave_hist
+.octave-workspace
+*.asv
+*.bak
+*~
+
+# Arquivos temporários de editores
+*.swp
+*.swo
+*.tmp

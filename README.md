@@ -1,24 +1,62 @@
 # Cálculo Numérico
-***
-Principais ferramentas utilizadas no Cálculo Numérico (UFCG)
 
-### Objetivos Básicos
+Material de apoio à disciplina de Cálculo Numérico (UFCG), com exemplos didáticos escritos em GNU Octave. O repositório reúne visualizações de funções e implementações introdutórias de métodos iterativos para encontrar raízes de equações não lineares.
 
-Introduzir os fundamentos dos métodos numéricos básicos utilizados na solução (tipicamente aproximada) de problemas matemáticos, algébricos e diferenciais, de caráter linear ou não linear, que aparecem comumente nas ciências puras e aplicadas e também nas engenharias. Em cálculo numérico pretende-se, ainda, analisar a influência dos erros introduzidos nas aproximações construtivas desses problemas bem como a implementação computacional eficiente dos respectivos métodos de aproximação. É válido enfatizar, ainda, que a formulação e/ou construção de tais métodos numéricos é baseada em resultados matemáticos sólidos e, portanto, não são dependentes de uma linguagem de programação particular.
+## Conteúdo
 
-É válido mencionar que em uma visão mais ampla, no contexto dos cursos de graduação, cálculo numérico pode ser visto como uma primeira disciplina que abrange o estudo qualitativo e quantitativo de soluções aproximadas via algoritmos numéricos (construtivos) para o tratamento de modelos matemáticos algébricos e diferenciais postos geralmente no contínuo que surgem praticamente em todas as áreas do conhecimento. Desta maneira, o cálculo numérico também permite uma oportunidade de estabelecer conexões entre os aspectos abstratos do rigor matemático e suas aplicações com respeito à demanda da sociedade por soluções de desafios da vida cotidiana em seu curso natural. Do ponto de vista formal o cálculo numérico faz parte da análise numérica, no sentido amplo, que comumente está preocupada com a quantificação dos erros cometidos nas diversas etapas de aproximação, tais como arredondamento e truncamento, e também com questões mais refinadas no escopo dos processos de aproximação, como discretização e iteração, e principalmente, da taxa de convergência das sequências de soluções aproximadas para as soluções exatas (únicas) dos modelos matemáticos sob investigação.
+| Pasta | Conteúdo |
+| --- | --- |
+| [`1-funcoes-2d`](1-funcoes-2d/) | Gráfico de uma função e de sua derivada. |
+| [`2-funcoes-3d`](2-funcoes-3d/) | Superfície 3D e curva helicoidal. |
+| [`3-solucoes-raiz`](3-solucoes-raiz/) | [Bissecção](3-solucoes-raiz/metodo_bisseccao.m), [falsa posição](3-solucoes-raiz/metodo_falsa_posicao.m), [falsa posição modificada](3-solucoes-raiz/metodo_falsa_posicao_modificado.m), [Newton](3-solucoes-raiz/metodo_newton.m) e [secante](3-solucoes-raiz/metodo_secante.m). |
+| [`exercicios`](exercicios/) | Scripts e funções usados em exercícios da disciplina. |
 
-### Clone este Repositório
+## Requisitos
 
-Os códigos são todos desenvolvidos utilizando o software Octave, para baixá-los em sua máquina local, utilizando o sistema de versionamento git, utilize a seguinte linha de comando:
+- [GNU Octave](https://octave.org/)
+- Git, para clonar o repositório
 
-- `git clone https://github.com/Alyssonmach/calculo-numerico`
+Os scripts são exemplos de estudo e alguns pedem valores pelo terminal durante a execução.
 
-### Contribua
+## Como executar
 
-Novos métodos são sempre bem-vindos, se você sentiu ausência de algum, ou quiser dar continuidade nesse projeto, sinta-se a vontade para fazer um `fork` ou abrir uma `issue`.
+Clone o repositório e entre na pasta:
 
+```sh
+git clone https://github.com/Alyssonmach/calculo-numerico.git
+cd calculo-numerico
+```
 
+Execute cada script a partir da pasta que contém os arquivos de função usados por ele. Por exemplo, para rodar o método da bissecção:
 
+```sh
+cd 3-solucoes-raiz
+octave metodo_bisseccao.m
+```
 
+O Octave solicitará a tolerância e os limites do intervalo. Para executar um dos gráficos, partindo da raiz do repositório, entre na pasta correspondente:
 
+```sh
+cd 1-funcoes-2d
+octave func_plot.m
+```
+
+## Prévia dos gráficos
+
+### Funções em 2D
+
+![Gráfico de uma função trigonométrica e sua derivada](1-funcoes-2d/func_plot.png)
+
+### Funções em 3D
+
+| Superfície | Hélice |
+| --- | --- |
+| ![Superfície 3D](2-funcoes-3d/func_plot1.png) | ![Curva helicoidal em 3D](2-funcoes-3d/func_plot2.png) |
+
+### Exercícios
+
+![Gráfico do exercício 2](exercicios/exercicio2.png)
+
+## Contribuições
+
+Sugestões, correções e novos exemplos são bem-vindos. Abra uma *issue* para discutir uma ideia ou envie um *pull request* com a descrição do método, os arquivos necessários e instruções para executá-lo.
